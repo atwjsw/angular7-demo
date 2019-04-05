@@ -10,6 +10,7 @@ export class RecipeService {
 
   private recipes: Recipe[] = [
     new Recipe(
+        1,
       'Tasty Schnitzel', '' +
       'A super-tasty Schnitzel - just awesome!',
       'https://cdn-image.myrecipes.com/sites/default/files/styles/4_3_horizontal_-_1200x900/public/mrtrending0475.jpg?itok=ULkGk3Pn',
@@ -18,6 +19,7 @@ export class RecipeService {
         new Ingredient('French Fries', 20)
       ]),
     new Recipe(
+      2,
       'Big Fat Burger',
       'What else you need to say?',
       'https://cdn-image.myrecipes.com/sites/default/files/styles/4_3_horizontal_-_1200x900/public/mrtrending0475.jpg?itok=ULkGk3Pn',
@@ -27,6 +29,7 @@ export class RecipeService {
         ]
     ),
     new Recipe(
+      3,
       'A Test Recipe3',
       'This is a recipe',
       'https://cdn-image.myrecipes.com/sites/default/files/styles/4_3_horizontal_-_1200x900/public/mrtrending0475.jpg?itok=ULkGk3Pn',
@@ -41,6 +44,10 @@ export class RecipeService {
 
   getRecipes() {
     return this.recipes.slice();
+  }
+
+  getRecipe(id: number) {
+    return this.recipes.find(recipe => (recipe.id === id));
   }
 
   addIngredientToShoppingList(ingredients: Ingredient[]) {
