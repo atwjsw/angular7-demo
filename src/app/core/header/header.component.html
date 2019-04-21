@@ -13,7 +13,6 @@
           <li><a routerLink="/signup">Register</a></li>
           <li><a routerLink="/signin">Login</a></li>
         </ng-template>
-        {{(authState | async).authenticated}}
         <li *ngIf="(authState | async).authenticated" style="cursor: pointer;" (click)="onLogout()"><a>Logout</a></li>
         <li *ngIf="(authState | async).authenticated" class="dropdown" appDropdown>
           <a style="cursor: pointer"

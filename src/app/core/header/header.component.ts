@@ -20,8 +20,9 @@ export class HeaderComponent implements OnInit {
               private store: Store<fromApp.AppState>) { }
 
   ngOnInit(): void {
+
+    this.store.select('auth').subscribe((state) => console.log('auth', state));
     this.authState = this.store.select('auth');
-    this.store.select('auth').subscribe((state) => console.log(state));
   }
 
   onSaveData() {
